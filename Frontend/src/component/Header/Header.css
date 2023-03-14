@@ -1,0 +1,32 @@
+
+.headerMain{
+    height: 5.25rem;
+}
+.header{   
+    background-color: #FAF9F6;    
+    box-shadow: 0 0 2px #0000;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;    
+}
+.header-list{
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li a{
+    align-items: center;    
+    font-weight: 400;
+    display: flex;
+    padding-left: 1.20rem;
+    padding-right: 1.20rem;
+}
+
+.CartIcon{
+    margin-right: 30px;
+    font-size: 25px;
+    color: #f00;
+}
