@@ -3,7 +3,6 @@ import CardHeader from './CardHeader';
 import './Card.css'
 
 const CardImage = (props) => {
-    console.log("props", props.url);
     return (
         <React.Fragment>
             {/* <a href='#_'> */}

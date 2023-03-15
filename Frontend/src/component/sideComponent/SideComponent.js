@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
 import '../../App.css';
 import './SideComponent.css';
 
@@ -9,7 +8,7 @@ const SideComponent = (props) => {
         <React.Fragment>
             <div className='side-component'>
                 <div className='image'>
-                    <img src={props.data} />
+                    <img src={props.products} />
                 </div>
             </div>
         </React.Fragment>
