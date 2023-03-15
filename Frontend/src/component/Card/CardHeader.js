@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Card.css';
 import { BsCartPlus } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { AddItemToCart } from '../../store/actions/cartActions';
 
-const cardHeader = (props) => {
+const CardHeader = (props) => {
+
+    const dispatch = useDispatch();
+
+    const product = {
+        id: props.id,
+        title: props.productName,
+        quantity: 1,
+        price: props.price
+    }
+
 
     return (
         <React.Fragment>
@@ -14,9 +26,10 @@ const cardHeader = (props) => {
                     <span className="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <div className='card-price'>
-                    <span>$250</span>
+                    <span>${props.price}</span>
                     <div>
-                        <a className='CartIcon'><BsCartPlus /></a>
+                        <a className='CartIcon' id={props.id} onClick={() => dispatch(AddItemToCart(product))
+                        }><BsCartPlus /></a>
                     </div>
                 </div>
             </header>
@@ -24,4 +37,4 @@ const cardHeader = (props) => {
     )
 }
 
-export default cardHeader;
+export default CardHeader;

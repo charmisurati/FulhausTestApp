@@ -14,10 +14,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (products.length > 0) {
-            setVisible(true)
-            console.log(products[0].imageURLs[0], visible)
-        }
+        if (products.length > 0) setVisible(true)
         else setVisible(false)
     })
 
@@ -32,7 +29,7 @@ const Home = () => {
             <div className='flex flex-1 bg-gray' >
 
                 {
-                    visible == true && <SideComponent products={products[0].imageURLs[0]} />
+                    visible === true && <SideComponent products={products[0].imageURLs[0]} />
                 }
 
                 <Card totalProducts={products} />

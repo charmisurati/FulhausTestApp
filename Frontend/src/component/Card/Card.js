@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CardHeader from "./CardHeader";
 import CardImage from "./CardImage";
 import './Card.css';
 
@@ -15,7 +14,7 @@ const Card = (props) => {
                 <div className='grid'>
                     {
                         totalProducts.map((v, index) => {
-                            return <CardImage url={v.imageURLs[index]} key={index} productName={v.fulhausProductName} price={v.retailPrice} />
+                            return <CardImage url={v.imageURLs[index]} key={index} productName={v.fulhausProductName} price={v.retailPrice} id={v._id} />
                         })
                     }
                 </div>

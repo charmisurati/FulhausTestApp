@@ -1,6 +1,5 @@
 //action Creator
 
-import axios from "axios";
 import { CartActions } from "../reducers/cartReducer";
 
 export const AddItemToCart = (product) => {
