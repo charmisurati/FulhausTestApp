@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css';
 import '../../App.css';
 import { BsCartPlus } from 'react-icons/bs';
+import Checkout from '../Checkout/Checkout';
 
-const Header = () => {
+const Header = (props) => {
 
+
+    const openCart = () => {
+        props.setVisible(true);
+
+    }
     return (
         <React.Fragment>
             <div>
@@ -15,7 +21,7 @@ const Header = () => {
                                 <a>User Name</a>
                             </li>
                             <li className='flex'>
-                                <a className='CartIcon'><BsCartPlus /></a>
+                                <a className='CartIcon' onClick={openCart}><BsCartPlus /></a>
                             </li>
                         </ul>
                     </div>

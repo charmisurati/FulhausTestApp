@@ -2,6 +2,7 @@
     width: 380px;
     padding: 1.25rem;
     padding-top: 0;
+    display: none;
 }
 
 .side-component img{
@@ -12,4 +13,10 @@
 
 .image{
     height: 100%;
+}
+
+@media (min-width: 1023px){
+    .side-component {
+        display: block;
+    }
 }

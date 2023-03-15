@@ -1,0 +1,10 @@
+
+.product-card{
+    border: 1px solid rgb(229,231,235);
+    border-radius: 5px;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;  
+    background-color: #fff;  
+}
+
