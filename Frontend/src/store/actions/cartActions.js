@@ -8,3 +8,7 @@ export const AddItemToCart = (product) => {
         dispatch(CartActions.addUpdateItemToCart(product))
     }
 }
+
+export const GetItemToCart = () => {
+    CartActions.getCartData()
+}

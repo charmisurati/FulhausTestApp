@@ -12,7 +12,7 @@ const CardImage = (props) => {
                         <img src={props.url} alt="Furniture" className='card-img' />
                     </span>
                 </div>
-                <CardHeader productName={props.productName} price={props.price} id={props.id} />
+                <CardHeader productName={props.productName} price={props.price} id={props.id} url={props.url} />
             </article>
             {/* </a> */}
         </React.Fragment>

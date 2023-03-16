@@ -12,7 +12,6 @@ const CartSlice = createSlice({
     reducers: {
         addUpdateItemToCart(state, action) {
             const newItem = action.payload;
-            console.log("newItem", newItem);
             const existItem = state.cart.find(item => item.id === newItem.id);
 
             state.totalAmount += newItem.price;
@@ -24,6 +23,7 @@ const CartSlice = createSlice({
                     quantity: 1,
                     price: newItem.price,
                     totalprice: newItem.price,
+                    imageURL: newItem.imageURL
                 })
             }
             else {

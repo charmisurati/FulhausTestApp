@@ -10,6 +10,15 @@
     padding-top: 0;
 }
 
+
+.product-card{
+    border: 1px solid rgb(229,231,235);
+    border-radius: 5px;   
+    height: 100%;
+    overflow: hidden;  
+    background-color: #fff;  
+}
+
 .card-container{
     height: 170px;
     display: flex;
@@ -26,16 +35,6 @@
     padding: 10px;
 }
 
-
-.product-card{
-    border: 1px solid rgb(229,231,235);
-    border-radius: 5px;   
-    height: 100%;
-    overflow: hidden;  
-    background-color: #fff;  
-}
-
-
 .star{
     padding: 10px;
     color: #FEA017;
@@ -46,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px 10px;
+    padding: 0 10px 10px 10px;
 }
 
 .card-price span{

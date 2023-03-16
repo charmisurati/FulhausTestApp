@@ -12,7 +12,8 @@ const CardHeader = (props) => {
         id: props.id,
         title: props.productName,
         quantity: 1,
-        price: props.price
+        price: props.price,
+        imageURL: props.url
     }
 
 
