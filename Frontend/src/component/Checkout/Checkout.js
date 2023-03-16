@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Checkout.css';
 import { CgClose } from 'react-icons/cg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { CART } from '../../store';
+import { BsTrash } from 'react-icons/bs';
+import '../../App.css';
+import { DeleteItemToCart } from '../../store/actions/cartActions';
+
 
 const Checkout = (props) => {
 
     const cart = useSelector((state) => state?.[CART]?.cart);
-    console.log(cart);
-
+    const totalAmount = useSelector((state) => state?.[CART]?.totalAmount);
+    const dispatch = useDispatch();
     const closeCart = () => {
         props.setVisible(false);
     }
@@ -25,24 +29,36 @@ const Checkout = (props) => {
                     <div className='product-view-container'>
                         {
                             cart.map((v, i) => {
-                                {/* console.log("v", v); */ }
                                 return (
-                                    <div>
-                                        <div className='product-view-card'>
-                                            <div className='product-position'>
-                                                <span>
-                                                    <img src={v.imageURL} alt={v.imageURL} className="cart-img" />
-                                                </span>
+                                    <div key={i}>
+                                        <div className='checkout-container'>
+                                            <img src={v.imageURL} alt={v.imageURL} className="cart-img" />
+                                            <div className='product-content'>
+                                                <span className='product-title'>{v.title}</span>
+                                                <div className='price-quantity'>
+                                                    <p className='product-price'>${v.price}</p>
+                                                    <p className='quantity'>{v.quantity}X</p>
+                                                </div>
+                                                <div className='deleteItem'>
+                                                    <a className='deleteIcon' onClick={() => dispatch(DeleteItemToCart(v))}><BsTrash /></a>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <div className='total-amount'>
                                             <div>
-                                                <span>{v.title}</span>
+                                                <p className='title-total'>Total</p>
+                                                <p className='total-price'>${totalAmount}</p>
                                             </div>
                                         </div>
-                                        <div className='price-quantity'>
-                                            <p>${v.price}</p>
-                                            <span>{v.quantity}</span>
-                                        </div>
-                                    </div>)
+                                        <footer>
+                                            <div>
+                                                <button className='btn-checkout'>
+                                                    Checkout
+                                                </button>
+                                            </div>
+                                        </footer>
+                                    </div>
+                                )
                             })
                         }
 

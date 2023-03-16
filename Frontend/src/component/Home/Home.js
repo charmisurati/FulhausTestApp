@@ -4,7 +4,8 @@ import '../../App.css';
 import './Home.css';
 import Card from '../Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetCartData } from '../../store/actions/productActions';
+import { GetProductData } from '../../store/actions/productActions';
+import { GetCartData } from '../../store/actions/cartActions';
 import { PRODUCT } from '../../store';
 
 const Home = () => {
@@ -12,14 +13,16 @@ const Home = () => {
     const dispatch = useDispatch()
     const [visible, setVisible] = useState(false);
 
-
     useEffect(() => {
-        if (products.length > 0) setVisible(true)
+        if (products.length > 0) {
+            setVisible(true)
+        }
         else setVisible(false)
     })
 
 
     useEffect(() => {
+        dispatch(GetProductData());
         dispatch(GetCartData());
 
     }, [dispatch])
@@ -29,10 +32,12 @@ const Home = () => {
             <div className='flex flex-1 bg-gray' >
 
                 {
-                    visible === true && <SideComponent products={products[0].imageURLs[0]} />
+                    visible === true && <SideComponent products={products[0].imageUrls[0]} />
                 }
 
-                <Card totalProducts={products} />
+                {
+                    visible === true && <Card totalProducts={products} />
+                }
 
 
             </div>

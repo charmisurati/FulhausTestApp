@@ -8,6 +8,11 @@
    
 }
 
+
+h2{
+    padding: 0 15px;
+}
+
 .conatiner{
    height: 100%;
    width: 25%; 
@@ -31,41 +36,108 @@
 
 .product-view-container{
     flex-grow: 1;
-    padding-top: 40px;   
-}
-
-.product-view-card{
-    display: flex;
-    align-items: center;   
-    padding: 1rem 1rem;
-}
-
-.product-position{
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    flex-shrink: 0;
-    justify-content: center;
-    overflow: hidden;
-    height: 4rem;
-    width: 4rem;
+    padding: 20px;   
+    overflow:auto;
+    max-height: 420px;
 }
 
 .cart-img{
-    position: absolute;
+    /* position: absolute;
     inset: 0;
     height: 100%;
     width: 100%;
     max-height: 100%;
     max-width: 100%;
+    object-fit: contain; */
+
+    height: 50%;
+    width: 45%;
     object-fit: contain;
 }
 
 .price-quantity{
     display: flex;
     justify-content: space-between;
+    align-items: center;    
+    margin-top: 15px;
+}
+
+.checkout-container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-content{
+    padding: 20px;    
+}
+
+.product-title, .quantity{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.product-price{
+    font-size: 16px;
+    color: #847E7E;
+    font-weight: 700;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    max-width: 19rem;
+}
+
+.btn-checkout{   
+    width: 100%;
+    padding: 0.25rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25rem;
+    height: 3rem;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.total-amount{
+    position: fixed;
+    bottom: 70px;
+    padding: 35px 35px;
+    margin-bottom: 35px;
+}
+
+.title-total{
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+.total-price{
+    position: absolute;
+    left: 15rem;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.deleteItem{
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    padding: 1rem 1rem;
+    padding-top: 10px;
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.deleteIcon{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
 }

@@ -14,7 +14,7 @@ const Card = (props) => {
                 <div className='grid'>
                     {
                         totalProducts.map((v, index) => {
-                            return <CardImage url={v.imageURLs[index]} key={index} productName={v.fulhausProductName} price={v.retailPrice} id={v._id} />
+                            return <CardImage url={v.imageUrls[0]} key={index} productName={v.productName} price={v.retailPrice} id={v._id} />
                         })
                     }
                 </div>
