@@ -48,15 +48,44 @@ exports.getCart = async (req, res, next) => {
     }
 };
 
+// exports.createCartItem = async (req, res, next) => {
+//     try {
+//         const result = await CartModel.create(req.body);
+//         res.status(200).json({
+//             status: 'success',
+//             data: {
+//                 result
+//             }
+//         });
+//     } catch (error) {
+//         next(error)
+//     }
+// };
+
 exports.createCartItem = async (req, res, next) => {
     try {
-        const result = await CartModel.create(req.body);
-        res.status(200).json({
-            status: 'success',
-            data: {
-                result
-            }
-        });
+        console.log(req.body);
+        const existingProduct = await CartModel.findOne({ product: new mongoose.Types.ObjectId(req.body.product) });
+        console.log(existingProduct);
+        if (existingProduct) {
+            const result = await CartModel.findByIdAndUpdate(existingProduct._id, { qty: existingProduct.qty + 1 });
+            res.status(200).json({
+                status: 'success',
+                data: {
+                    result
+                }
+            });
+        }
+        else {
+            const result = await CartModel.create(req.body);
+            res.status(200).json({
+                status: 'success',
+                data: {
+                    result
+                }
+            });
+        }
+
     } catch (error) {
         next(error)
     }

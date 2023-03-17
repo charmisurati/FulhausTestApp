@@ -18,7 +18,7 @@ const Header = (props) => {
                     <div className='fixed flex w-full z-50 header'>
                         <ul className='header-list flex'>
                             <li className='flex'>
-                                <a>User Name</a>
+                                <a>John</a>
                             </li>
                             <li className='flex'>
                                 <a className='CartIcon' onClick={openCart}><BsCartPlus /></a>

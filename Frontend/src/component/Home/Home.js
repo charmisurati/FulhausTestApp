@@ -8,6 +8,7 @@ import { GetProductData } from '../../store/actions/productActions';
 import { GetCartData } from '../../store/actions/cartActions';
 import { PRODUCT } from '../../store';
 
+
 const Home = () => {
     const products = useSelector((state) => state?.[PRODUCT]?.products);
     const dispatch = useDispatch()
@@ -41,6 +42,7 @@ const Home = () => {
 
 
             </div>
+
         </React.Fragment>
     )
 }
