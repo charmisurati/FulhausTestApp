@@ -42,13 +42,6 @@ After installation of node_modules, import the data.json (backend folder) into y
 **Database:** MongoDB
 
 
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
-
-
-
 # Hi, I'm Charmi! 👋
 
 
